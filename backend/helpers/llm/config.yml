@@ -1,0 +1,41 @@
+primaryLlm:
+  modelType: "gemini"
+  modelName: "gemini-2.0-flash-lite"
+  temperature: 0.7
+  max_tokens: 2000
+  response_format: "json_object"
+  endpoint: "https://generativelanguage.googleapis.com/v1beta"
+
+fallbackLlm:
+  modelType: "cohere"
+  modelName: "command-r-plus-08-2024"
+  temperature: 0.5
+  max_tokens: 2000
+  response_format: "json_object"
+  endpoint: ""
+
+# Optional providers (can be enabled if needed)
+openaiConfig:
+  modelType: "openai"
+  modelName: "gpt-4"
+  temperature: 0.7
+  max_tokens: 2000
+  response_format: "json_object"
+  endpoint: "https://api.openai.com"
+
+togetheraiConfig:
+  modelType: "togetherai"
+  modelName: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
+  temperature: 0.5
+  max_tokens: 2000
+  response_format: "json_object"
+  endpoint: "https://api.together.xyz"
+
+# RAG Configuration (for LangChain)
+rag:
+  embedding_model: "text-embedding-ada-002"
+  embedding_dimension: 1536
+  chunk_size: 1000
+  chunk_overlap: 200
+  retrieval_top_k: 5
+  similarity_threshold: 0.7
